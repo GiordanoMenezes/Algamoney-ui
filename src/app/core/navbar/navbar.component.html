@@ -1,0 +1,19 @@
+<header>
+  <div class="topo">
+    <div id="menuelogo">
+       <a *ngIf="exibindoMenu()" pButton icon="fa fa-bars" (click)="mostrarMenu=true" pTooltip="Abrir Menu"></a>
+       <img class="logo" src="./../../assets/imagens/Angbranco.png"/>
+    </div>
+    <div id="saudacao"><span>Olá, <i id="sauduser">{{authService.jwtPayload?authService.jwtPayload.nome:'Visitante'}}</i> </span></div>
+  </div>
+</header>
+<p-sidebar [(visible)]="mostrarMenu" [baseZIndex]="10000" [showCloseIcon]="false">
+    <a pButton icon="fa fa-bars"  (click)="mostrarMenu = false" pTooltip="Fechar" style="font-size:1.15em;
+    background-color: #11578e;border: 1px solid #6c70ff;border-radius: 0;"></a>
+    <ul class="navbar-menu">
+      <li class="navbar-usuario">{{authService.jwtPayload?.nome}}</li>
+      <li class="navbar-menuitem" routerLinkActive="ativo" *ngIf="authService.temPermissao('ROLE_PESQUISAR_LANCAMENTO')"><a routerLink="lancamentos" (click)="mostrarMenu = false">Lançamentos</a></li>
+      <li class="navbar-menuitem" routerLinkActive="ativo" *ngIf="authService.temPermissao('ROLE_PESQUISAR_PESSOA')"><a routerLink="pessoas" (click)="mostrarMenu = false">Pessoas</a></li> 
+      <li class="navbar-menuitem"><a href="javascript:;" (click)="mostrarMenu=false;logout();">Logout</a></li>
+    </ul>
+</p-sidebar>

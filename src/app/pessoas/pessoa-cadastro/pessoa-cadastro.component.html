@@ -1,0 +1,74 @@
+<p-blockUI [blocked]="blockedDocument">
+  <i class="fa fa-spin fa-cog fa-5x" style="position:absolute;top:25%;left:40%"></i>
+</p-blockUI>
+<form [formGroup]="frmPessoa" novalidate autocomplete="off" (ngSubmit)="salvar()">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h1>{{titulobanner}}</h1>
+    </div>
+  </div>
+  <div class="p-grid">
+    <div class="marBot p-col-11 p-md-7 ui-fluid">
+        <div class="ui-float-label">
+          <input id="txt_nome" pInputText type="text" name="nome" formControlName="nome">
+          <label for="txt_nome">Nome</label>
+        </div>
+        <app-message [control]="frmPessoa.get('nome')" text="Nome Obrigatório" error="required"></app-message>
+        <app-message [control]="frmPessoa.get('nome')" text="Mínimo de {{frmPessoa.get('nome').errors?.minlength?.requiredLength}} caracteres"
+          error="minlength"></app-message>
+    </div>
+    <div class="marBot p-col-11 p-md-9 p-lg-7 ui-fluid" formGroupName="endereco">
+      <div class="ui-float-label">
+        <input id="txt_lograd" pInputText type="text" name="logradouro" formControlName="logradouro">
+        <label for="txt_lograd">Logradouro</label>
+      </div>
+      <app-message [control]="frmPessoa.get('endereco').get('logradouro')" text="Logradouro obrigatório" error="required"></app-message>
+    </div>
+    <div class="marBot p-col-11 p-md-3 ui-fluid" formGroupName="endereco">
+      <div class="ui-float-label">
+        <input id="txt_numero" pInputText type="text" name="numero" formControlName="numero">
+        <label for="txt_numero">Número</label>
+      </div>
+      <app-message [control]="frmPessoa.get('endereco').get('numero')" text="Número obrigatório" error="required"></app-message>
+    </div>
+    <div class="marBot p-col-11 p-md-4 ui-fluid" formGroupName="endereco">
+      <div class="ui-float-label">
+        <input id="txt_complem" pInputText type="text" name="complemento" formControlName="complemento" >
+        <label for="txt_complem">Complemento</label>
+      </div>
+    </div>
+    <div class="marBot p-col-11 p-md-4 ui-fluid" formGroupName="endereco">
+      <div class="ui-float-label">
+        <input id="txt_bairro" pInputText type="text" name="bairro" formControlName="bairro">
+        <label for="txt_bairro">Bairro</label>
+      </div>
+      <app-message [control]="frmPessoa.get('endereco').get('bairro')" text="Bairro obrigatório" error="required"></app-message>
+    </div>
+    <div class="marBot p-col-11 p-md-3 ui-fluid" formGroupName="endereco">
+      <div class="ui-float-label">
+        <p-inputMask mask="99.999-999" name="cep" formControlName="cep"></p-inputMask>
+        <label for="txt_cep">CEP</label>
+      </div>
+      <app-message [control]="frmPessoa.get('endereco').get('cep')" text="CEP obrigatório" error="required"></app-message>
+    </div>
+    <div class="marBot p-col-11 p-md-4 ui-fluid" formGroupName="endereco">
+      <div class="ui-float-label">
+        <input id="txt_cidade" pInputText type="text" name="cidade" formControlName="cidade" >
+        <label for="txt_cidade">Cidade</label>
+      </div>
+      <app-message [control]="frmPessoa.get('endereco').get('cidade')" text="Cidade obrigatório" error="required"></app-message>
+    </div>
+    <div class="marBot p-col-11 p-md-2 p-lg-1 ui-fluid" formGroupName="endereco">
+      <div class="ui-float-label">
+        <input id="txt_uf" pInputText type="text" name="uf" formControlName="estado" >
+        <label for="txt_uf">UF</label>
+      </div>
+      <app-message [control]="frmPessoa.get('endereco').get('estado')" text="UF obrigatório" error="required"></app-message>
+    </div>
+    <div class="p-col-11">
+      <button pButton type="submit" icon="fa fa-check" label="Salvar" [disabled]="frmPessoa.invalid"></button>
+      <button pButton type="button" icon="fa fa-file" label="Novo" class="ui-button-info" (click)="novo()"></button>
+      <a routerLink="/pessoas">Voltar para a Pesquisa</a>
+    </div>
+  </div>
+</form>

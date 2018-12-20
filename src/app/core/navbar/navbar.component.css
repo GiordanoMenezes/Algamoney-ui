@@ -1,0 +1,48 @@
+header .topo {
+    background-color: #1e94d2;
+    padding:7px;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img.logo {
+  margin: 0 auto;
+  padding-left:15px;
+}
+
+.ui-button {
+  margin-left: 10px;
+  margin-top: 5px;
+  color:#fff;
+}
+
+#menuelogo {
+   display: flex;
+   align-items: center;
+}
+
+.topo a.ui-button {
+    height: 2.5em;
+    width: 2.7em;
+    margin-top:0;
+    background-color: #11578e;
+}
+
+#saudacao {
+    font-family: Lato;
+    font-weight: 600;
+    color: #f7fbff;
+    font-size: 0.95em;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#sauduser {
+  padding-left:5px;
+  font-style: normal;
+}
+
+

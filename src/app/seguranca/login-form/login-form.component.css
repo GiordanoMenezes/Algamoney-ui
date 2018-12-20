@@ -1,0 +1,70 @@
+html, body {
+    /* height: 100%;
+    min-height: 100%; */
+    color: rgba(0, 0, 0, .7);
+  }
+
+  .container {
+    /* height: 100%;
+    min-height: 100%; */
+    display: -webkit-flex;
+    display: flex;
+    /* -webkit-align-items: center;
+    align-items: center; */
+    -webkit-justify-content: center;
+    justify-content: center; 
+    padding: 10px;
+  }
+
+.loginbox {
+    margin-top:40px;
+    max-width:340px;
+    min-height:280px;
+    background-color:rgba(245, 244, 244, 0.973);
+    border: 1px solid rgba(0, 0, 0, .3);
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+}
+
+#logintit {
+    font-size: 1.8em;
+    font-weight: 600;
+    padding-bottom: 7px;
+}
+
+.ui-inputgroup {
+    width: 85%;
+}
+
+.ui-float-label {
+    width:100%;
+}
+
+input {
+    font-size:1em;
+    height:100%;
+    width: 100%;
+}
+
+.p-col-12 {
+    margin-top:10px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+#btnlogin {
+    font-size:1.10em;
+}
+
+#btnlogin.ui-button.ui-button-text-icon-left {
+    padding: 0 1.5em 0 1.5em;
+}

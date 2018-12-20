@@ -1,0 +1,47 @@
+<p-blockUI [blocked]="blockedDocument">
+    <i class="fa fa-spin fa-spinner fa-5x" style="position:absolute;top:28%;left:48%"></i>
+</p-blockUI>
+<form  novalidate [formGroup]="frmLogin" (ngSubmit)="fazerLogin()">
+  <div class="container">
+    <div class="loginbox">
+      <div class="p-grid Wid100">
+        <div class="p-col-12">
+          <h1 id="logintit">LOGIN</h1>
+        </div>
+      </div>
+      <div class="p-grid">
+        <div class="p-col-12">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">
+              <i class="fa fa-user"></i>
+            </span>
+            <span class="ui-float-label">
+              <input id="txt_desc" pInputText type="text" name="nome" formControlName="nome">
+              <label for="txt_desc">Usuário</label>
+            </span>
+          </div>
+        </div>
+        <div class="p-col-12">
+            <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon">
+                <i class="fa fa-lock"></i>
+              </span>
+              <span class="ui-float-label">
+                <input id="txt_senha" pPassword [feedback]=false type="password" name="senha"
+                 formControlName="senha" #senha>
+                <label for="txt_senha">Senha</label>
+              </span>
+            </div>
+          </div>
+      </div>
+      <div class="p-grid">
+          <div class="p-col-12">
+            <div>
+              <button id="btnlogin" pButton type="submit" icon="fa fa-check" label="Login"
+               [disabled]="frmLogin.invalid" (click)="senha.value='';senha.focus();"></button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</form>

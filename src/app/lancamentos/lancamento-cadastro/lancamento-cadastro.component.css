@@ -1,0 +1,7 @@
+.ui-button {
+    margin-right:10px;
+}
+
+input#txt_valor {
+    text-align: left !important;
+}

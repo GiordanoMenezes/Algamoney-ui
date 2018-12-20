@@ -1,1 +1,346 @@
 /* You can add global styles to this file, and also import other style files */
+
+.Wid5 { width:5% }
+.Wid10 { width:10% }
+.Wid15 { width:15% }
+.Wid20 { width:20% }
+.Wid25 { width:25% }
+.Wid30 { width:30% }
+.Wid33 { width:33% }
+.Wid40 { width:40% }
+.Wid50 { width:50% }
+.Wid60 { width:60% }
+.Wid70 { width:70% }
+.Wid80 { width:80% }
+.Wid90 { width:90% }
+.Wid100 { width:100% }
+
+.tAlright {text-align: right;}
+.tAlcenter {text-align: center;}
+.tAlleft {text-align: left;}
+
+.marBot {margin-bottom: 12px;}
+
+
+body {
+    font-family: "Roboto", "Lato", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin:0; 
+    background-color:#fbfbfb;
+    color:rgb(63, 73, 73);
+}
+
+body .ui-button {
+    background-color: #1477c3;
+    border: 1px solid #205b71;
+}
+
+body .ui-button-text {
+    font-family: "Lato", "Roboto";
+}
+
+body .ui-widget {
+    font-family: "Roboto", "Lato", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color:#122e58;
+    margin-top:8px;
+    margin-bottom:10px;
+    padding-bottom:10px;
+    border-bottom:2px solid darkgray;
+}
+
+/* BUTTONS */
+
+#btnlogin .ui-button-icon-left {
+    left: 1.7em ;
+}
+
+/* FIM BUTTONS */
+
+/* MESSAGES */
+
+/* ativar ou desativar tela escurecida no efeito ajax-status */
+body .ui-widget-overlay {
+    background-color: transparent;
+}
+
+.ui-table .ui-table-loading-icon {
+    font-size:4em !important;
+}
+
+.ui-fluid .ui-message {
+    font-size: 0.88em;
+    font-weight: 600;
+    padding-top: 1px;
+    padding-left: 0;
+}
+
+/* FIM MESSAGES */
+
+/* LABEL */
+
+label {
+    font-size:1.10em;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+.ui-float-label>label, .ui-dropdown .ui-dropdown-label
+{
+    font-size: 0.95em;
+    padding-left: .429em;  
+}
+
+.ui-dropdown .ui-dropdown-label {
+    padding-top:.50em;
+    padding-bottom:.50em;
+}
+
+.ui-float-label input.ng-dirty.ng-invalid ~ label{
+    color:#898989;
+}
+
+/* FIM LABEL */
+
+/* INPUT E INPUTGROUP */
+
+.ui-calendar input {
+    max-width:145px;
+}
+
+body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight, body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item-group.ui-state-highlight {
+    background-color: #e23237;
+}
+
+.ui-inputgroup .ui-inputgroup-addon {
+    border-right: none;
+}
+
+body .ui-inputgroup .ui-inputgroup-addon {
+  color: #383636;
+  background-color: #e8e7f1;
+  font-size: 0.98em;
+}
+
+/*Consertar um bug do primeng quando se coloca um floatLabel dentro de um inputgroup  */
+.ui-inputgroup .ui-float-label .ui-inputtext, .ui-inputgroup .ui-float-label .ui-dropdown {
+    /* border:1px solid #d6d6d6; */
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px; 
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+body .ui-inputgroup .ui-inputgroup-addon:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; 
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.ui-inputgroup .ui-inputtext:not(:last-child) {
+    border-right: 1px solid #a6a6a6;
+}
+
+.ui-float-label>input:focus ~ label, .ui-float-label>input.ui-state-filled ~ label, .ui-float-label>.ui-inputwrapper-focus ~ label, .ui-float-label>.ui-inputwrapper-filled ~ label,.ui-float-label textarea:focus ~ label, .ui-float-label textarea.ui-state-filled ~ label, .ui-float-label textarea:-webkit-autofill ~ label {
+    font-weight: bold;
+    color: #122e58;
+}
+
+
+.ui-fluid .ui-inputgroup .ui-float-label {
+    width: 100%;
+}
+
+.ui-float-label> textarea + label {
+    top:20%;
+}
+
+.ui-float-label>input:focus ~ label, .ui-float-label>input.ui-state-filled ~ label, .ui-float-label>.ui-inputwrapper-focus ~ label, .ui-float-label>.ui-inputwrapper-filled ~ label {
+    padding-left:0;
+}
+
+/* FIM INPUT E INPUTGROUP */
+
+/* SIDEBAR */
+
+body .ui-sidebar {
+    padding: .5em 0;
+    background-color: #363a41;
+    background-image: -webkit-gradient(linear, left top, right top, from(#101010), to(#363a41));
+    background-image: -webkit-linear-gradient(to right, #101010, #363a41);
+    background-image: -moz-linear-gradient(to right, #101010, #363a41);
+    background-image: -ms-linear-gradient(to right, #101010, #363a41);
+    background-image: -o-linear-gradient(to right, #101010, #363a41);
+    background-image: linear-gradient(to right, #101010, #363a41);
+  }
+  
+  .navbar-menu {
+  color:#fff;
+  list-style: none;
+  padding:1px;
+  }
+  
+  .navbar-usuario {
+    padding:10px;
+    text-transform: uppercase;
+    font-size:1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid #525151;
+    margin-bottom:15px;
+  }
+  
+  .navbar-menuitem {
+      padding:10px;
+  }
+  
+  .navbar-menuitem a {
+      text-decoration: none;
+      color: rgb(249, 246, 209);
+      font-size: 1.04em;
+  }
+
+  .navbar-menuitem a:hover {
+    text-decoration: none;
+    color: rgb(249, 246, 209);
+}
+  
+  .navbar-menuitem.ativo,.navbar-menuitem.ativo:hover {
+    background-color: #3c58bb;
+  }
+
+  .navbar-menuitem:hover {
+    background-color: #818b86;
+}
+  
+  /* FIM SIDEBAR */
+
+/* FLEXGRID */
+
+@media (min-width:768px) {
+   .p-grid {
+      max-width: 98%;
+   }
+}
+
+.p-grid {
+    margin:0 auto;
+}
+
+/* FIM FLEXGRID */
+
+
+.ui-messages-error {
+    padding-left: 0;
+    border:none;
+    color:red;
+    margin-top:0 !important;
+}
+
+/* DATATABLE */
+
+body .ui-table .ui-table-tbody > tr > td {
+    padding: 0.30em 0.55em;
+    color: #5d5656;
+    font-weight: 600;
+    font-size:0.95em;
+}
+
+body .ui-table .ui-table-thead,body .ui-table .ui-table-tbody   {
+    font-family: "Lato", "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.ui-table .ui-table-thead>tr>th,  .ui-table .ui-table-tfoot>tr>td {
+    padding: .65em .5em;
+}
+
+.ui-paginator {
+    padding:0.25em;
+}
+
+body .ui-table .ui-table-thead > tr > th {
+    color: #f7fbff;
+    background-color: #11868a;
+    font-weight: 600;
+}
+
+body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+    background-color: #ff2b2b;
+}
+
+/* FIM DATATABLE */
+
+/* TOAST */
+
+/* @media (min-width: 992px) {
+    .ui-toast.ui-widget {
+        margin-left:-19em;
+    }
+}
+
+@media (max-width: 991px) {
+    .ui-toast.ui-widget {
+        margin-left:-12em;
+    }
+} */
+
+.ui-toast.ui-widget {
+    width:24em;
+}
+
+.ui-toast-top-right {
+    right: 8px;
+    top:57px;
+}
+
+body .ui-toast .ui-toast-summary {
+    font-size: 1.05em;
+}
+
+body .ui-toast .ui-toast-message {
+    border: 0 none;
+    color: #fdf2f2 !important;
+    opacity: .9 !important;
+    font-family: Lato, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 0.98em;
+    line-height: 22px;
+    border-radius: 4px;
+    min-height: 48px;
+}
+
+body .ui-toast .ui-toast-message .ui-toast-close-icon {
+    color: #d2d2d2 !important;
+}
+
+body .ui-toast .ui-toast-message.ui-toast-message-success {
+    background-color: #51a351;
+}
+
+body .ui-toast .ui-toast-message.ui-toast-message-error {
+    background-color: #e2172a;
+}
+
+/* trocar icone do x por um x com circulo */
+.ui-toast-message-error .ui-toast-icon.pi-times:before {
+    content: "\e90c";
+}
+
+/* FIM TOAST */
+
+/* CONFIRM DIALOG */
+
+body .ui-dialog.ui-widget .ui-dialog-content {
+    color: #5d5656;
+    font-weight: 600;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1.03em;
+}
+
+body .ui-dialog.ui-widget .ui-dialog-title {
+    font-weight: 600;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1.10em;
+    color: #f2effb;
+}

@@ -1,0 +1,106 @@
+<p-blockUI [blocked]="blockedDocument">
+    <i class="fa fa-spin fa-cog fa-5x" style="position:absolute;top:25%;left:40%"></i>
+</p-blockUI>
+<form [formGroup]="frmLancamento" autocomplete="off" (ngSubmit)="salvar()">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h1>{{titulobanner}}</h1>
+    </div>
+    <div class="marBot p-col-12">
+      <p-selectButton [options]="tipolancs" #btntipolanc name="tipolanc" formControlName="tipo"></p-selectButton>
+    </div>
+    <div class="marBot p-col-6 p-md-3 p-lg-2 ui-fluid">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="ui-float-label">
+          <p-calendar dateFormat="dd/mm/yy" [locale]="pt_BR"  name="vencto" formControlName="dataVencimento"></p-calendar>
+          <label>Vencimento</label>
+        </span>
+      </div>
+      <app-message [control]="frmLancamento.get('dataVencimento')" error="required"
+      text="Informe Vencimento"></app-message>
+    </div> 
+    <div class="marBot p-col-6 p-md-3 p-lg-2 ui-fluid">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="ui-float-label">
+          <p-calendar dateFormat="dd/mm/yy" [locale]="pt_BR" name="pagto" formControlName="dataPagamento"></p-calendar>
+          <label>{{btntipolanc.value === 'RECEITA'?'Recebimento':'Pagamento'}}</label>
+        </span>
+      </div>
+    </div>
+    <div class="marBot p-col-11 p-lg-9 ui-fluid">
+      <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon">
+              <i class="fa fa-edit"></i>
+            </span>
+        <span class="ui-float-label">
+          <input id="txt_desc" pInputText type="text" name="descricao" formControlName="descricao">
+          <label for="txt_desc">Descrição</label>
+        </span>       
+      </div>
+      <app-message [control]="frmLancamento.get('descricao')" error="required"
+          text="Informe a Descrição"></app-message>
+        <app-message [control]="frmLancamento.get('descricao')" error="minlength"
+          text="Mínimo de {{ frmLancamento.get('descricao').errors?.minlength?.requiredLength }} caracteres"></app-message>
+    </div>
+    <div class="marBot p-col-4  p-md-2 ui-fluid">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          R$
+        </span>
+        <span class="ui-float-label">
+          <input id="txt_valor" onClick="this.select();" pInputText type="text"  name="valor"
+          formControlName="valor"
+           currencyMask [options]="{ prefix: '', thousands: '.', decimal: ',' }">
+          <label>Valor</label>
+        </span>
+      </div>
+      <app-message [control]="frmLancamento.get('valor')" error="required"
+      text="Informe um valor válido"></app-message>
+    </div>
+    <div class="marBot p-col-11 p-md-6 ui-fluid" formGroupName="categoria">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          <i class="fa fa-tags"></i>
+        </span>
+        <span class="ui-float-label">
+          <p-dropdown [options]="categorias" [autoWidth]="false" name="categoria" class="Wid100"
+          formControlName="codigo"></p-dropdown>
+          <label>Categoria</label>
+        </span>
+        <app-message [control]="frmLancamento.get('categoria').get('codigo')" error="required"
+        text="Informe a Categoria"></app-message>
+      </div>
+    </div>
+    <div class="marBot p-col-11 p-md-5 ui-fluid" formGroupName="pessoa">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          <i class="fa fa-user"></i>
+        </span>
+        <span class="ui-float-label">
+          <p-dropdown [options]="pessoas" [autoWidth]="false" [filter]="true" name="pessoa" class="Wid100"
+          formControlName="codigo"></p-dropdown>
+          <label>Pessoa</label>
+        </span>
+        <app-message [control]="frmLancamento.get('pessoa').get('codigo')" error="required"
+        text="Informe a Pessoa"></app-message>
+      </div>
+    </div>
+    <div class="marBot p-col-11 p-md-8 ui-fluid">
+      <span class="ui-float-label">
+        <textarea id="txt_obs" pInputTextarea rows="3" formControlName="observacao"></textarea>
+        <label for="txt_obs">Observação</label>
+      </span>
+    </div>
+    <div class=p-col-11>
+      <button pButton type="submit" icon="fa fa-check" label="Salvar" [disabled]="frmLancamento.invalid"></button>
+      <button pButton type="button" icon="fa fa-file" label="Novo" class="ui-button-info" (click)="novo()"></button>
+      <a routerLink="/lancamentos">Voltar para a Pesquisa</a>
+    </div>
+  </div>
+</form>
