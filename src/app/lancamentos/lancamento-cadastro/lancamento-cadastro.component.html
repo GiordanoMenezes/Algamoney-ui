@@ -48,7 +48,7 @@
         <app-message [control]="frmLancamento.get('descricao')" error="minlength"
           text="Mínimo de {{ frmLancamento.get('descricao').errors?.minlength?.requiredLength }} caracteres"></app-message>
     </div>
-    <div class="marBot p-col-4  p-md-2 ui-fluid">
+    <div class="marBot p-col-5 p-sm-4  p-md-3 p-lg-2 ui-fluid">
       <div class="ui-inputgroup">
         <span class="ui-inputgroup-addon">
           R$
@@ -100,7 +100,7 @@
     <div class=p-col-11>
       <button pButton type="submit" icon="fa fa-check" label="Salvar" [disabled]="frmLancamento.invalid"></button>
       <button pButton type="button" icon="fa fa-file" label="Novo" class="ui-button-info" (click)="novo()"></button>
-      <a routerLink="/lancamentos">Voltar para a Pesquisa</a>
+      <a routerLink="/lancamentos">Pesquisa</a>
     </div>
   </div>
 </form>

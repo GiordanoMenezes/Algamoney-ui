@@ -66,26 +66,26 @@
         <ng-template pTemplate="body" let-lanc>
           <tr>
             <td>
-              <!-- <span class="ui-column-title">Pessoa:</span> -->
+              <span class="ui-column-title">Pessoa:</span>
               {{lanc.pessoa}}</td>
             <td>
-              <!-- <span class="ui-column-title">Descrição:</span> -->
+              <span class="ui-column-title">Descrição:</span>
               {{lanc.descricao}}
             </td>
             <td class="tAlcenter">
-              <!-- <span class="ui-column-title">Data Vencto:</span> -->
+              <span class="ui-column-title">Data Vencto:</span>
               {{lanc.dataVencimento | date:'dd/MM/yy' }}
             </td>
             <td class="tAlcenter">
-              <!-- <span class="ui-column-title">Data Pagto:</span> -->
+              <span class="ui-column-title">Data Pagto:</span>
               {{lanc.dataPagamento | date:'dd/MM/yy' }}
             </td>
             <td class="tAlright">
-              <!-- <span class="ui-column-title">Valor:</span> -->
+              <span class="ui-column-title">Valor:</span>
               <span [style.color]="lanc.tipo==='DESPESA'?'red':'blue'">{{lanc.valor | number:'1.2-2'}}</span>
             </td>
             <td class="tAlcenter">
-              <!-- <span class="ui-column-title">Ações:</span> -->
+              <span class="ui-column-title">Ações:</span>
               <button pButton icon="fa fa-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/lancamentos',lanc.id]" style="margin-right:3px;"></button>
               <button pButton icon="fa fa-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmaExclusao(lanc)"
                       [disabled]="!authService.temPermissao('ROLE_REMOVER_LANCAMENTO')"></button>
